@@ -19,7 +19,7 @@ function checkNarciso(numberToBeChecked){
     console.log(list);
     const initValue = 0;
     let cubeNumber = list.reduce((sum, num) => sum + Math.pow(num, 3), initValue);
-    console.log(sexo);
+    console.log(cubeNumber);
 
     let result = cubeNumber == inputNum ? "Is Narciso" : "Not Narciso";
     console.log(result);
