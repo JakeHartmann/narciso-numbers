@@ -18,10 +18,10 @@ function checkNarciso(numberToBeChecked){
     let list = getDigits(numberToBeChecked);
     console.log(list);
     const initValue = 0;
-    let sexo = list.reduce((sum, num) => sum + Math.pow(num, 3), initValue);
+    let cubeNumber = list.reduce((sum, num) => sum + Math.pow(num, 3), initValue);
     console.log(sexo);
 
-    let result = sexo == inputNum ? "Is Narciso" : "Not Narciso";
+    let result = cubeNumber == inputNum ? "Is Narciso" : "Not Narciso";
     console.log(result);
 
    }
