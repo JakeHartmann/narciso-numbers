@@ -3,6 +3,13 @@ let inputNum;
 
 function getInputValue(){
     let inputNumber = document.getElementById("number").value.trim();
+
+    // Limit input to 20 digits
+    if (inputNumber.length > 40) {
+    inputNumber = inputNumber.substr(0, 20);
+    document.getElementById("number").value = inputNumber;
+  }
+
     inputNum = inputNumber;
     if(inputNum == ""){
         document.getElementById("result").textContent = "";
@@ -10,24 +17,32 @@ function getInputValue(){
     else{
     checkNarciso(inputNum);
     }
-    // document.getElementById("form").reset();
 }
 
 // Treats number as an array and displays all of its indexes
 function getDigits(number)
 {
-    return Array.from(String(number), Number);
+    return bigInt(number).toArray(10).value;
+   // return Array.from(String(number), Number);
 }
 
 function checkNarciso(numberToBeChecked){
     let list = getDigits(numberToBeChecked);
-    console.log(list);
+    let numDigits = list.length;
+
+    let cubeSum = 0;
+    for(let i = 0; i < numDigits; i++)
+    {
+        cubeSum += Math.pow(list[i], numDigits);
+    }
+
+    /* console.log(list);
     const initValue = 0;
     let cubeNumber = list.reduce((sum, num) => sum + Math.pow(num, 3), initValue);
-    console.log(cubeNumber);
+    console.log(cubeNumber); */
 
-    let result = cubeNumber == inputNum ? "Is a Narciso number 👍" : "Isn't a Narciso number ❌";
-    let isNarciso = cubeNumber == inputNum ? true : false;
+    let result = cubeSum == inputNum ? "Is a Narciso number 👍" : "Isn't a Narciso number ❌";
+    let isNarciso = cubeSum == inputNum ? true : false;
     console.log(result);
     console.log(isNarciso);
 
