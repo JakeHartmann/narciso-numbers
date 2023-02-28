@@ -1,3 +1,7 @@
+body {
+  background-color: #fcfcfc;
+}
+
 form {
     width: 400px;
     margin: 0 auto;
@@ -6,6 +10,8 @@ form {
   }
   
   h1 {
+    font-size:50px;
+    font-family: 'Roboto', sans-serif;
     text-align: center; /* Center horizontally */
     display: flex;
     justify-content: center; /* Center vertically */
@@ -20,6 +26,9 @@ form {
   }
   
   input[type="text"] {
+    font-family: 'Roboto', sans-serif;
+    font-size:x-large;
+    text-align: center;
     display: block;
     width: 100%;
     padding: 10px;
@@ -48,4 +57,23 @@ form {
   
   button[type="button"]:hover {
     background-color: #0072ff;
+  }
+
+  #result {
+    font-family: 'Segoe UI Emoji', sans-serif;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 40px;
+    font-weight: bold;
+    background: linear-gradient(to right, #9C27B0, #E91E63);
+    -webkit-background-clip: text;
+    /* -webkit-text-fill-color:#2772ce; */
+  }
+
+  #result.correct {
+    color: green;
+  }
+  
+  #result.incorrect {
+    color: red;
   }
