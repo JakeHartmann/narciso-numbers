@@ -2,9 +2,14 @@
 let inputNum;
 
 function getInputValue(){
-    let inputNumber = document.getElementById("number").value;
+    let inputNumber = document.getElementById("number").value.trim();
     inputNum = inputNumber;
+    if(inputNum == ""){
+        document.getElementById("result").textContent = "";
+    }
+    else{
     checkNarciso(inputNum);
+    }
     // document.getElementById("form").reset();
 }
 
